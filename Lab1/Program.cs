@@ -13,7 +13,7 @@ namespace Lab1
             }
             Console.WriteLine();
         }
-
+        
         public static void testList()
         {
             List<int> m_list = new List<int>();
@@ -42,9 +42,44 @@ namespace Lab1
             m_list.Reverse();
             Console.Write("reverse list: ");listOutput(m_list);
         }
+
+        public static void testBinaryTree()
+        {
+            BinaryTree<int> m_tree = new BinaryTree<int>();
+            for (var i = 0; i < N; i++)
+            {
+                m_tree.Add(i);
+            }
+            m_tree.Remove(1);
+            m_tree.Add(-6);
+            BinaryTreeNode<int> node;
+            if ((node = m_tree.FindNode(1)) != null)
+            {
+                Console.WriteLine("1 is find");
+                Console.WriteLine("data " + node.Data);
+            }
+            else 
+                Console.WriteLine("1 is not find");
+
+            if ((node = m_tree.FindNode(-6)) != null)
+            {
+                Console.WriteLine("-6 is find");
+                Console.WriteLine("data " + node.Data);
+            }
+            else Console.WriteLine("-6 is not find");
+
+            if ((node = m_tree.FindNode(8)) != null)
+            {
+                Console.WriteLine("8 is find");
+                Console.WriteLine("data " + node.Data);
+            }
+            else Console.WriteLine("8 is not find");
+
+        }
         public static void Main(string[] args)
         {
             testList();
+            testBinaryTree();
         }
     }
 }
