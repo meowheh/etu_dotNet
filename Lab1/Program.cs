@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Lab1
 {
@@ -13,7 +14,23 @@ namespace Lab1
             }
             Console.WriteLine();
         }
-        
+        public static void testSorting()
+        {
+            string[] strings = {"sort", "this", "words", "AAAA", "please", "friend"};
+            InsertingSort<string>.InsertionSort(strings);
+            foreach (var str in strings)
+            {
+                Console.Write(str + " ");
+            }
+            Console.WriteLine();
+            int[] numbers = new[] {3, 6, 1, -5, 0, 7, 23, 7, -27, -75, 2};
+            InsertingSort<int>.InsertionSort(numbers);
+            foreach (var number in numbers)
+            {
+                Console.Write(number + " ");
+            }
+            Console.WriteLine();
+        }
         public static void testList()
         {
             List<int> m_list = new List<int>();
@@ -80,6 +97,7 @@ namespace Lab1
         {
             testList();
             testBinaryTree();
+            testSorting();
         }
     }
 }
